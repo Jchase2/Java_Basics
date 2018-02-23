@@ -8,13 +8,11 @@ public class LinkedList<T>
 {
 
     private Node<T> head; // Current object at head. 
-    private Node<T> next;
 
     // Empty constructor for LinkedList
     public LinkedList()
     {
         head = null;
-        next = null;
     }
 
     // Add node to front of list. 
@@ -60,7 +58,10 @@ public class LinkedList<T>
     {
         LinkedList newList = new LinkedList();
         newList.addNodeFront("test");
+        newList.addNodeFront("test2");
+        newList.addNodeFront("newaddition");
         System.out.println(newList.head.getData());
-        System.out.println(newList.next);
+        System.out.println(newList.head.next.getData());
+        System.out.println(newList.head.next.next.getData());
     }
 }

@@ -23,6 +23,11 @@ public class LinkedList<T>
         newNode.next = head;
         head = newNode;
     }
+    
+    public void removeHead ()
+    {
+        head = head.next;
+    }
 
     // Node class. 
     private class Node<T>
@@ -63,5 +68,7 @@ public class LinkedList<T>
         System.out.println(newList.head.getData());
         System.out.println(newList.head.next.getData());
         System.out.println(newList.head.next.next.getData());
+        newList.removeHead();
+        System.out.println(newList.head.getData());
     }
 }

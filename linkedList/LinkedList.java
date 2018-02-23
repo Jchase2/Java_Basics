@@ -1,6 +1,6 @@
 /* Author: JChase2
 *  Just practicing data structures in java. 
-*  Linked List...
+*  Generic Linked List. 
 *  Heavily commented for reference  and learning purposes...
  */
 
@@ -57,9 +57,9 @@ public class LinkedList<T>
     public static void main(String[] args)
     {
         LinkedList newList = new LinkedList();
-        newList.addNodeFront("test");
-        newList.addNodeFront("test2");
-        newList.addNodeFront("newaddition");
+        newList.addNodeFront(5);
+        newList.addNodeFront("oh");
+        newList.addNodeFront("kk");
         System.out.println(newList.head.getData());
         System.out.println(newList.head.next.getData());
         System.out.println(newList.head.next.next.getData());

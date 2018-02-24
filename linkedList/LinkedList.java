@@ -31,7 +31,8 @@ public class LinkedList<T>
     
     public void printAll ()
     {
-        Node tempNode = new Node(head);
+        Node tempNode = head;
+        System.out.println(tempNode.getData());
         while (tempNode.next != null)
         {
             tempNode = tempNode.next;
@@ -76,12 +77,7 @@ public class LinkedList<T>
         newList.addNodeFront("oh");
         newList.addNodeFront("kk");
         newList.addNodeFront("finished");
-        System.out.println(newList.head.getData());
-        System.out.println(newList.head.next.getData());
-        System.out.println(newList.head.next.next.getData());
-        newList.removeHead();
-        System.out.println(newList.head.getData());
-        System.out.println("");
         newList.printAll();
+        
     }
 }

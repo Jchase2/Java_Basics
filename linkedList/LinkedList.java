@@ -28,7 +28,17 @@ public class LinkedList<T>
     {
         head = head.next;
     }
-
+    
+    public void printAll ()
+    {
+        Node tempNode = new Node(head);
+        while (tempNode.next != null)
+        {
+            tempNode = tempNode.next;
+            System.out.println(tempNode.getData());
+        }
+    }
+    
     // Node class. 
     private class Node<T>
     {
@@ -65,10 +75,13 @@ public class LinkedList<T>
         newList.addNodeFront(5);
         newList.addNodeFront("oh");
         newList.addNodeFront("kk");
+        newList.addNodeFront("finished");
         System.out.println(newList.head.getData());
         System.out.println(newList.head.next.getData());
         System.out.println(newList.head.next.next.getData());
         newList.removeHead();
         System.out.println(newList.head.getData());
+        System.out.println("");
+        newList.printAll();
     }
 }

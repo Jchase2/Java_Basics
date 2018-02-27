@@ -17,7 +17,7 @@ public class LinkedList<T>
 
     // Add node to front of list. 
     // E.g. create a new head. 
-    public void addNodeFront(T item)
+    public void addHead(T item)
     {
         Node newNode = new Node(item);
         newNode.next = head;
@@ -39,6 +39,8 @@ public class LinkedList<T>
             System.out.println(tempNode.getData());
         }
     }
+    
+
     
     // Node class. 
     private class Node<T>
@@ -73,10 +75,10 @@ public class LinkedList<T>
     public static void main(String[] args)
     {
         LinkedList newList = new LinkedList();
-        newList.addNodeFront(5);
-        newList.addNodeFront("oh");
-        newList.addNodeFront("kk");
-        newList.addNodeFront("finished");
+        newList.addHead(5);
+        newList.addHead("oh");
+        newList.addHead("kk");
+        newList.addHead("finished");
         newList.printAll();
         
     }

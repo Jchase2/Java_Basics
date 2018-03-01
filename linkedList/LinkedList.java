@@ -116,9 +116,9 @@ public class LinkedList<T>
         // Constructor. 
         public Node(T item)
         {
-            this.data = item;
-            this.next = null;
-            this.previous = null;
+            data = item;
+            next = null;
+            previous = null;
         }
 
         // Get data in current node. 

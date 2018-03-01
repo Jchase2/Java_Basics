@@ -16,7 +16,7 @@ public class LinkedList<T>
         head = null;
     }
     
-    public void insertBefore(T item, Node beforeNode)
+    private void insertBefore(T item, Node beforeNode)
     {
         Node newNode = new Node(item);
         newNode.next = beforeNode;
@@ -33,7 +33,7 @@ public class LinkedList<T>
         }
     }
     
-    public void insertAfter(T item, Node afterNode)
+    private void insertAfter(T item, Node afterNode)
     {
         Node newNode = new Node(item);
         newNode.previous = afterNode;
@@ -52,7 +52,7 @@ public class LinkedList<T>
 
     // Add node to front of list. 
     // E.g. create a new head. 
-    public void addHead(T item)
+    private void addHead(T item)
     {
         Node newNode = new Node(item);
         if (head == null)
@@ -66,7 +66,7 @@ public class LinkedList<T>
             insertBefore(item, head);
     }
     
-    public void removeNode(Node node)
+    private void removeNode(Node node)
     {
         if (node.previous == null)
         {
@@ -83,7 +83,7 @@ public class LinkedList<T>
     }
     
     // Adds a Tail to the list. 
-    public void addTail(T item)
+    private void addTail(T item)
     {
         Node newNode = new Node(item);
         newNode.previous = tail;
@@ -92,7 +92,7 @@ public class LinkedList<T>
         tail = newNode; 
     }
     
-    public void printAll ()
+    private void printAll ()
     {
         Node tempNode = head;
         System.out.println(tempNode.getData());

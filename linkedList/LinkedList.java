@@ -116,7 +116,7 @@ public class LinkedList<T>
         // Constructor. 
         public Node(T item)
         {
-            data = item;
+            data = item; 
             next = null;
             previous = null;
         }

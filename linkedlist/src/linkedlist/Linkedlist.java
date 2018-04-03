@@ -16,11 +16,6 @@ public class Linkedlist<T>
         head = null;
     }
 
-    /**
-     *
-     * @param item
-     * @param beforeNode
-     */
     public void insertBefore(T item, Node beforeNode)
     {
         Node newNode = new Node(item);
@@ -110,7 +105,7 @@ public class Linkedlist<T>
     }
 
     // Node class. 
-    public class Node<T>
+    public static class Node<T>
     {
 
         private T data; // Data in current node object. 

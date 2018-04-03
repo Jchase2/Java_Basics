@@ -1,8 +1,7 @@
 /* Author: JChase2
 *  Just practicing data structures in java. 
 *  Generic Doubly Linked List. 
-*  Heavily commented for reference  and learning purposes...
- */
+*/
 package linkedlist;
 
 public class Linkedlist<T>
@@ -17,7 +16,12 @@ public class Linkedlist<T>
         head = null;
     }
 
-    private void insertBefore(T item, Node beforeNode)
+    /**
+     *
+     * @param item
+     * @param beforeNode
+     */
+    public void insertBefore(T item, Node beforeNode)
     {
         Node newNode = new Node(item);
         newNode.next = beforeNode;
@@ -33,7 +37,7 @@ public class Linkedlist<T>
         }
     }
 
-    private void insertAfter(T item, Node afterNode)
+    public void insertAfter(T item, Node afterNode)
     {
         Node newNode = new Node(item);
         newNode.previous = afterNode;
@@ -51,7 +55,7 @@ public class Linkedlist<T>
 
     // Add node to front of list. 
     // E.g. create a new head. 
-    private void addHead(T item)
+    public void addHead(T item)
     {
         Node newNode = new Node(item);
         if (head == null)
@@ -66,7 +70,7 @@ public class Linkedlist<T>
         }
     }
 
-    private void removeNode(Node node)
+    public void removeNode(Node node)
     {
         if (node.previous == null)
         {
@@ -85,7 +89,7 @@ public class Linkedlist<T>
     }
 
     // Adds a Tail to the list. 
-    private void addTail(T item)
+    public void addTail(T item)
     {
         Node newNode = new Node(item);
         newNode.previous = tail;
@@ -94,7 +98,7 @@ public class Linkedlist<T>
         tail = newNode;
     }
 
-    private void printAll()
+    public void printAll()
     {
         Node tempNode = head;
         System.out.println(tempNode.getData());
@@ -106,7 +110,7 @@ public class Linkedlist<T>
     }
 
     // Node class. 
-    private class Node<T>
+    public class Node<T>
     {
 
         private T data; // Data in current node object. 

@@ -23,6 +23,15 @@ public class Stack <T>
         aList.removeNode(head);
         return aReturn;
     }
+    public String peek (Linkedlist aList)
+    {
+        String aReturn = head.getData().toString();
+        return aReturn;
+    }
+    public boolean isEmpty()
+    {
+        return head == null;
+    }
     
     /**
      * @param args the command line arguments
@@ -31,6 +40,12 @@ public class Stack <T>
     {
         Linkedlist aList = new Linkedlist();
         Stack newStack = new Stack();
+        if (newStack.isEmpty()) {
+            System.out.println("It's empty!");
+        } else
+        {
+            System.out.println("The stack has elements!");
+        }
         newStack.push(aList, 1);
         System.out.println(newStack.pop(aList));
     }

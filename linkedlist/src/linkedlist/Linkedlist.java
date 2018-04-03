@@ -3,19 +3,20 @@
 *  Generic Doubly Linked List. 
 *  Heavily commented for reference  and learning purposes...
  */
+package linkedlist;
 
-public class LinkedList<T>
+public class Linkedlist<T>
 {
 
     private Node<T> head; // Current object at head. 
     private Node<T> tail; // Current object at tail. 
 
     // Empty constructor for LinkedList
-    public LinkedList()
+    public Linkedlist()
     {
         head = null;
     }
-    
+
     private void insertBefore(T item, Node beforeNode)
     {
         Node newNode = new Node(item);
@@ -24,15 +25,14 @@ public class LinkedList<T>
         {
             newNode.previous = null;
             head = newNode;
-        }
-        else 
+        } else
         {
             newNode.previous = beforeNode.previous;
             beforeNode.previous.next = newNode;
             beforeNode.previous = newNode;
         }
     }
-    
+
     private void insertAfter(T item, Node afterNode)
     {
         Node newNode = new Node(item);
@@ -41,8 +41,7 @@ public class LinkedList<T>
         {
             newNode.next = null;
             tail = newNode;
-        }
-        else 
+        } else
         {
             newNode.next = afterNode.next;
             afterNode.next.previous = newNode;
@@ -61,27 +60,30 @@ public class LinkedList<T>
             tail = newNode;
             head.next = null;
             head.previous = null;
-        }
-        else 
+        } else
+        {
             insertBefore(item, head);
+        }
     }
-    
+
     private void removeNode(Node node)
     {
         if (node.previous == null)
         {
             head = node.next;
-        }
-        else
+        } else
+        {
             node.previous.next = node.next;
+        }
         if (node.next == null)
         {
             tail = node.previous;
-        }
-        else
+        } else
+        {
             node.next.previous = node.previous;
+        }
     }
-    
+
     // Adds a Tail to the list. 
     private void addTail(T item)
     {
@@ -89,10 +91,10 @@ public class LinkedList<T>
         newNode.previous = tail;
         newNode.next = null;
         tail.next = newNode;
-        tail = newNode; 
+        tail = newNode;
     }
-    
-    private void printAll ()
+
+    private void printAll()
     {
         Node tempNode = head;
         System.out.println(tempNode.getData());
@@ -102,9 +104,7 @@ public class LinkedList<T>
             System.out.println(tempNode.getData());
         }
     }
-    
 
-    
     // Node class. 
     private class Node<T>
     {
@@ -116,7 +116,7 @@ public class LinkedList<T>
         // Constructor. 
         public Node(T item)
         {
-            data = item; 
+            data = item;
             next = null;
             previous = null;
         }
@@ -129,9 +129,11 @@ public class LinkedList<T>
 
         public void setData(T item)
         {
-            this.data = item;
-        }
+            {
+                this.data = item;
+            }
 
+        }
     }
 
     /**
@@ -139,7 +141,7 @@ public class LinkedList<T>
      */
     public static void main(String[] args)
     {
-        LinkedList newList = new LinkedList();
+        Linkedlist newList = new Linkedlist();
         newList.addHead(5);
         newList.addHead("oh");
         newList.addHead("kk");
@@ -150,6 +152,6 @@ public class LinkedList<T>
         newList.printAll();
         newList.removeNode(newList.tail);
         newList.printAll();
-        
+
     }
 }

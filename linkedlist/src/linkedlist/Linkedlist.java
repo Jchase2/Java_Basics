@@ -1,7 +1,7 @@
 /* Author: JChase2
 *  Just practicing data structures in java. 
 *  Generic Doubly Linked List. 
-*/
+ */
 package linkedlist;
 
 public class Linkedlist<T>
@@ -96,11 +96,17 @@ public class Linkedlist<T>
     public void printAll()
     {
         Node tempNode = head;
-        System.out.println(tempNode.getData());
-        while (tempNode.next != null)
+        if (tempNode != null)
         {
-            tempNode = tempNode.next;
             System.out.println(tempNode.getData());
+            while (tempNode.next != null)
+            {
+                tempNode = tempNode.next;
+                System.out.println(tempNode.getData());
+            }
+        } else
+        {
+            System.out.println("No elements left!");
         }
     }
 
@@ -150,6 +156,11 @@ public class Linkedlist<T>
         newList.removeNode(newList.head);
         newList.printAll();
         newList.removeNode(newList.tail);
+        newList.printAll();
+        newList.removeNode(newList.head);
+        newList.removeNode(newList.head);
+        newList.printAll();
+        newList.removeNode(newList.head);
         newList.printAll();
 
     }

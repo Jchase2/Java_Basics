@@ -67,19 +67,25 @@ public class Linkedlist<T>
 
     public void removeNode(Node node)
     {
-        if (node.previous == null)
+        try
         {
-            head = node.next;
-        } else
-        {
-            node.previous.next = node.next;
+            if (node.previous == null)
+            {
+                head = node.next;
+            } else
+            {
+                node.previous.next = node.next;
+            }
+            if (node.next == null)
+            {
+                tail = node.previous;
+            } else
+            {
+                node.next.previous = node.previous;
+            }
         }
-        if (node.next == null)
-        {
-            tail = node.previous;
-        } else
-        {
-            node.next.previous = node.previous;
+        catch (NullPointerException anObj) {
+            System.out.println("Already empty!");
         }
     }
 
@@ -162,6 +168,8 @@ public class Linkedlist<T>
         newList.printAll();
         newList.removeNode(newList.head);
         newList.printAll();
+        newList.removeNode(newList.head);
+        newList.removeNode(newList.head);
 
     }
 }

@@ -24,6 +24,8 @@ public class Linkedlist<T>
         {
             newNode.previous = null;
             head = newNode;
+            head.next = beforeNode;
+            beforeNode.previous = head;
         } else
         {
             newNode.previous = beforeNode.previous;
@@ -98,7 +100,11 @@ public class Linkedlist<T>
         tail.next = newNode;
         tail = newNode;
     }
-
+    
+    public Node returnHead()
+    {
+        return head; 
+    }
     public void printAll()
     {
         Node tempNode = head;
@@ -156,20 +162,12 @@ public class Linkedlist<T>
         newList.addHead(5);
         newList.addHead("oh");
         newList.addHead("kk");
-        newList.addHead("finished");
-        newList.addTail("end node test");
+        newList.addHead("beginning");
         newList.printAll();
-        newList.removeNode(newList.head);
-        newList.printAll();
+        System.out.println("");
         newList.removeNode(newList.tail);
         newList.printAll();
-        newList.removeNode(newList.head);
-        newList.removeNode(newList.head);
-        newList.printAll();
-        newList.removeNode(newList.head);
-        newList.printAll();
-        newList.removeNode(newList.head);
-        newList.removeNode(newList.head);
-
+        
+        
     }
 }

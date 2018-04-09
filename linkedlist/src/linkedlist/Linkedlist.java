@@ -67,6 +67,16 @@ public class Linkedlist<T>
         }
     }
 
+    // Adds a Tail to the list. 
+    public void addTail(T item)
+    {
+        Node newNode = new Node(item);
+        newNode.previous = tail;
+        newNode.next = null;
+        tail.next = newNode;
+        tail = newNode;
+    }
+
     public void removeNode(Node node)
     {
         try
@@ -85,26 +95,22 @@ public class Linkedlist<T>
             {
                 node.next.previous = node.previous;
             }
-        }
-        catch (NullPointerException anObj) {
+        } catch (NullPointerException anObj)
+        {
             System.out.println("Already empty!");
         }
     }
 
-    // Adds a Tail to the list. 
-    public void addTail(T item)
-    {
-        Node newNode = new Node(item);
-        newNode.previous = tail;
-        newNode.next = null;
-        tail.next = newNode;
-        tail = newNode;
-    }
-    
     public Node returnHead()
     {
-        return head; 
+        return head;
     }
+    
+    public Node returnTail()
+    {
+        return tail;
+    }
+
     public void printAll()
     {
         Node tempNode = head;
@@ -167,7 +173,6 @@ public class Linkedlist<T>
         System.out.println("");
         newList.removeNode(newList.tail);
         newList.printAll();
-        
-        
+
     }
 }

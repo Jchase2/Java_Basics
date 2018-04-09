@@ -7,32 +7,38 @@ package stack;
 
 import linkedlist.*;
 
-public class Stack <T>
+public class Stack<T>
 {
-    Linkedlist.Node head; // Current object at head. 
-    
+
     public void push(Linkedlist aList, T item)
     {
         Linkedlist.Node aNode = new Linkedlist.Node(item);
         aList.addHead(item);
-        head = aNode;
     }
-    public String pop (Linkedlist aList)
+
+    public String pop(Linkedlist aList)
     {
-        String aReturn = head.getData().toString();
-        aList.removeNode(head);
+        if (aList.returnHead() != null)
+        {
+            String aReturn = aList.returnHead().getData().toString();
+            aList.removeNode(aList.returnHead());
+            return aReturn;
+        }
+        else
+            return "Already Empty!";
+    }
+
+    public String peek(Linkedlist aList)
+    {
+        String aReturn = aList.returnHead().getData().toString();
         return aReturn;
     }
-    public String peek (Linkedlist aList)
+
+    public boolean isEmpty(Linkedlist aList)
     {
-        String aReturn = head.getData().toString();
-        return aReturn;
+        return aList.returnHead() == null;
     }
-    public boolean isEmpty()
-    {
-        return head == null;
-    }
-    
+
     /**
      * @param args the command line arguments
      */
@@ -40,13 +46,19 @@ public class Stack <T>
     {
         Linkedlist aList = new Linkedlist();
         Stack newStack = new Stack();
-        if (newStack.isEmpty()) {
+        if (newStack.isEmpty(aList))
+        {
             System.out.println("It's empty!");
         } else
         {
             System.out.println("The stack has elements!");
         }
         newStack.push(aList, 1);
+        newStack.push(aList, 2);
+        newStack.push(aList, 3);
+        System.out.println(newStack.pop(aList));
+        System.out.println(newStack.pop(aList));
+        System.out.println(newStack.pop(aList));
         System.out.println(newStack.pop(aList));
     }
 
